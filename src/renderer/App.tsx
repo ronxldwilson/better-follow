@@ -1,11 +1,8 @@
 import React from 'react';
+import AppRouter from '../routes/Router';
 
 const App = () => {
-  return (
-    <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
-      <h1>Hello from React + Electron + TypeScript + Vite</h1>
-    </div>
-  );
+  return <AppRouter />;
 };
 
 export default App;
