@@ -9,21 +9,86 @@ import Clients from '../pages/Clients';
 import Leads from '../pages/Leads';
 import Taskmanager from '../pages/Taskmanager';
 import Calendar from '../pages/Calendar';
-import Profile  from '../pages/Profile';
+import Profile from '../pages/Profile';
 import Settings from '../pages/Settings';
+
+import ProtectedRoute from '../pages/ProtectedRoute';
 
 const router = createBrowserRouter([
   { path: '/', element: <Login /> },
   { path: '/signup', element: <Signup /> },
-  { path: '/dashboard', element: <Dashboard /> },
-  { path: '/dashboard/insights', element: <Insights /> },
-  { path: '/dashboard/contacts', element: <Contacts /> },
-  { path: '/dashboard/clients', element: <Clients /> },
-  { path: '/dashboard/leads', element: <Leads /> },
-  { path: '/dashboard/taskmanager', element: <Taskmanager /> },
-  { path: '/dashboard/calendar', element: <Calendar/> },
-  { path: '/dashboard/settings', element: <Settings /> },
-  { path: '/dashboard/profile', element: <Profile /> },
+  {
+    path: '/dashboard',
+    element: (
+      <ProtectedRoute>
+        <Dashboard />
+      </ProtectedRoute>
+    )
+  },
+  {
+    path: '/dashboard/insights',
+    element: (
+      <ProtectedRoute>
+        <Insights />
+      </ProtectedRoute>
+    )
+  },
+  {
+    path: '/dashboard/contacts',
+    element: (
+      <ProtectedRoute>
+        <Contacts />
+      </ProtectedRoute>
+    )
+  },
+  {
+    path: '/dashboard/clients',
+    element: (
+      <ProtectedRoute>
+        <Clients />
+      </ProtectedRoute>
+    )
+  },
+  {
+    path: '/dashboard/leads',
+    element: (
+      <ProtectedRoute>
+        <Leads />
+      </ProtectedRoute>
+    )
+  },
+  {
+    path: '/dashboard/taskmanager',
+    element: (
+      <ProtectedRoute>
+        <Taskmanager />
+      </ProtectedRoute>
+    )
+  },
+  {
+    path: '/dashboard/calendar',
+    element: (
+      <ProtectedRoute>
+        <Calendar />
+      </ProtectedRoute>
+    )
+  },
+  {
+    path: '/dashboard/settings',
+    element: (
+      <ProtectedRoute>
+        <Settings />
+      </ProtectedRoute>
+    )
+  },
+  {
+    path: '/dashboard/profile',
+    element: (
+      <ProtectedRoute>
+        <Profile />
+      </ProtectedRoute>
+    )
+  },
 ]);
 
 export default function AppRouter() {
